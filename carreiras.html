@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carreiras - 3M Agropecuária</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .pagina-interna {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        
+        .carreiras-hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--verde-principal) 0%, var(--verde-escuro) 100%);
+            color: var(--branco);
+            text-align: center;
+        }
+        
+        .carreiras-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .carreiras-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        .beneficios-section {
+            padding: 4rem 0;
+            background-color: var(--cinza-claro);
+        }
+        
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .beneficio-card {
+            background-color: var(--branco);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px var(--sombra);
+        }
+        
+        .beneficio-icone {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .beneficio-card h3 {
+            color: var(--verde-escuro);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .vagas-section {
+            padding: 4rem 0;
+        }
+        
+        .vaga-card {
+            background-color: var(--branco);
+            border: 2px solid var(--cinza-medio);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .vaga-card:hover {
+            border-color: var(--verde-principal);
+            box-shadow: 0 10px 30px var(--sombra);
+            transform: translateY(-3px);
+        }
+        
+        .vaga-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .vaga-titulo h3 {
+            color: var(--verde-escuro);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .vaga-local {
+            color: var(--texto-medio);
+            font-size: 0.95rem;
+        }
+        
+        .vaga-badge {
+            background-color: var(--verde-principal);
+            color: var(--branco);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .vaga-detalhes {
+            margin-bottom: 1.5rem;
+        }
+        
+        .vaga-secao {
+            margin-bottom: 1.5rem;
+        }
+        
+        .vaga-secao h4 {
+            color: var(--verde-escuro);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .vaga-secao ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .vaga-secao ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            color: var(--texto-medio);
+        }
+        
+        .vaga-secao ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--verde-principal);
+            font-weight: bold;
+        }
+        
+        .vaga-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--cinza-medio);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .vaga-info {
+            color: var(--texto-medio);
+            font-size: 0.9rem;
+        }
+        
+        .btn-candidatar {
+            display: inline-block;
+            background-color: var(--verde-principal);
+            color: var(--branco);
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-candidatar:hover {
+            background-color: var(--verde-escuro);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(77, 124, 44, 0.3);
+        }
+        
+        .sem-vagas {
+            text-align: center;
+            padding: 3rem;
+            background-color: var(--cinza-claro);
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        
+        .sem-vagas h3 {
+            color: var(--verde-escuro);
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .carreiras-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .vaga-header {
+                flex-direction: column;
+            }
+            
+            .vaga-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">3M Agropecuária</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="fazenda.html">A Fazenda</a></li>
+                <li><a href="carreiras.html" class="active">Carreiras</a></li>
+                <li><a href="cadastro.html" class="btn-destaque">Trabalhe Conosco</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="pagina-interna">
+        
+        <!-- Hero -->
+        <section class="carreiras-hero">
+            <div class="container">
+                <h1>Trabalhe Conosco</h1>
+                <p>Venha fazer parte de uma equipe comprometida com a excelência no agronegócio. Valorizamos profissionais dedicados e oferecemos oportunidades reais de crescimento.</p>
+            </div>
+        </section>
+
+        <!-- Benefícios -->
+        <section class="beneficios-section">
+            <div class="container">
+                <h2 class="text-center">Por Que Trabalhar na 3M?</h2>
+                <div class="beneficios-grid">
+                    <div class="beneficio-card">
+                        <div class="beneficio-icone">💰</div>
+                        <h3>Salário Competitivo</h3>
+                        <p>Remuneração justa e compatível com o mercado</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="beneficio-icone">🏥</div>
+                        <h3>Plano de Saúde</h3>
+                        <p>Assistência médica para você e sua família</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="beneficio-icone">🍽️</div>
+                        <h3>Vale Alimentação</h3>
+                        <p>Benefício mensal para suas refeições</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="beneficio-icone">📚</div>
+                        <h3>Capacitação</h3>
+                        <p>Treinamentos e cursos profissionais</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="beneficio-icone">🚀</div>
+                        <h3>Crescimento</h3>
+                        <p>Plano de carreira estruturado</p>
+                    </div>
+                    
+                    <div class="beneficio-card">
+                        <div class="beneficio-icone">⚖️</div>
+                        <h3>Ambiente Saudável</h3>
+                        <p>Segurança e respeito no trabalho</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vagas Disponíveis -->
+        <section class="vagas-section">
+            <div class="container">
+                <h2 class="text-center">Vagas Abertas</h2>
+                
+                <!-- VAGA 1 -->
+                <div class="vaga-card">
+                    <div class="vaga-header">
+                        <div class="vaga-titulo">
+                            <h3>Tratador de Gado</h3>
+                            <p class="vaga-local">📍 Zona Rural - Cidade/SP</p>
+                        </div>
+                        <span class="vaga-badge">CLT • Integral</span>
+                    </div>
+                    
+                    <div class="vaga-detalhes">
+                        <div class="vaga-secao">
+                            <h4>Responsabilidades:</h4>
+                            <ul>
+                                <li>Manejo diário do rebanho (alimentação, água, limpeza)</li>
+                                <li>Observação e cuidados com saúde animal</li>
+                                <li>Manutenção de instalações e equipamentos</li>
+                                <li>Registro de atividades diárias</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="vaga-secao">
+                            <h4>Requisitos:</h4>
+                            <ul>
+                                <li>Experiência prévia com gado de corte</li>
+                                <li>Ensino fundamental completo</li>
+                                <li>Disponibilidade para residir na fazenda</li>
+                                <li>Conhecimento em manejo de pastagens (diferencial)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="vaga-footer">
+                        <span class="vaga-info">Publicado em: 05/05/2026</span>
+                        <a href="cadastro.html" class="btn-candidatar">Candidatar-se</a>
+                    </div>
+                </div>
+
+                <!-- VAGA 2 -->
+                <div class="vaga-card">
+                    <div class="vaga-header">
+                        <div class="vaga-titulo">
+                            <h3>Operador de Máquinas Agrícolas</h3>
+                            <p class="vaga-local">📍 Zona Rural - Cidade/SP</p>
+                        </div>
+                        <span class="vaga-badge">CLT • Integral</span>
+                    </div>
+                    
+                    <div class="vaga-detalhes">
+                        <div class="vaga-secao">
+                            <h4>Responsabilidades:</h4>
+                            <ul>
+                                <li>Operação de tratores, colheitadeiras e implementos</li>
+                                <li>Manutenção preventiva básica dos equipamentos</li>
+                                <li>Preparo de solo, plantio e colheita</li>
+                                <li>Zelar pela conservação das máquinas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="vaga-secao">
+                            <h4>Requisitos:</h4>
+                            <ul>
+                                <li>CNH categoria C ou D (obrigatório)</li>
+                                <li>Experiência mínima de 2 anos com máquinas agrícolas</li>
+                                <li>Ensino médio completo ou cursando</li>
+                                <li>Conhecimento em mecânica básica (diferencial)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="vaga-footer">
+                        <span class="vaga-info">Publicado em: 03/05/2026</span>
+                        <a href="cadastro.html" class="btn-candidatar">Candidatar-se</a>
+                    </div>
+                </div>
+
+                <!-- VAGA 3 -->
+                <div class="vaga-card">
+                    <div class="vaga-header">
+                        <div class="vaga-titulo">
+                            <h3>Assistente Administrativo Rural</h3>
+                            <p class="vaga-local">📍 Escritório na Fazenda - Cidade/SP</p>
+                        </div>
+                        <span class="vaga-badge">CLT • Comercial</span>
+                    </div>
+                    
+                    <div class="vaga-detalhes">
+                        <div class="vaga-secao">
+                            <h4>Responsabilidades:</h4>
+                            <ul>
+                                <li>Controle de estoque de insumos e nutrição</li>
+                                <li>Lançamento de dados em planilhas e sistemas</li>
+                                <li>Atendimento telefônico e gestão de e-mails</li>
+                                <li>Suporte administrativo à equipe operacional</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="vaga-secao">
+                            <h4>Requisitos:</h4>
+                            <ul>
+                                <li>Ensino médio completo (técnico ou superior cursando em Agro é um diferencial)</li>
+                                <li>Experiência com Pacote Office, especialmente Excel</li>
+                                <li>Organização e atenção aos detalhes</li>
+                                <li>Conhecimento em Google Sheets/Apps Script (grande diferencial!)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="vaga-footer">
+                        <span class="vaga-info">Publicado em: 01/05/2026</span>
+                        <a href="cadastro.html" class="btn-candidatar">Candidatar-se</a>
+                    </div>
+                </div>
+
+                <!-- Mensagem se não houver vagas -->
+                <!-- <div class="sem-vagas">
+                    <h3>Não há vagas disponíveis no momento</h3>
+                    <p>Mas você pode cadastrar seu currículo! Entraremos em contato quando surgir uma oportunidade compatível com seu perfil.</p>
+                    <a href="cadastro.html" class="btn-primary" style="margin-top: 1rem;">Cadastrar Currículo</a>
+                </div> -->
+                
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <h2>Não Encontrou a Vaga Ideal?</h2>
+                <p>Cadastre seu currículo em nosso banco de talentos</p>
+                <a href="cadastro.html" class="btn-primary">Cadastrar Agora</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>3M Agropecuária</h4>
+                    <p>Tradição, qualidade e compromisso com o agronegócio brasileiro.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="fazenda.html">A Fazenda</a></li>
+                        <li><a href="carreiras.html">Carreiras</a></li>
+                        <li><a href="cadastro.html">Cadastrar Currículo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>📍 Endereço da Fazenda, Cidade - SP</p>
+                    <p>📞 (XX) XXXX-XXXX</p>
+                    <p>📧 contato@3magro.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 3M Agropecuária - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

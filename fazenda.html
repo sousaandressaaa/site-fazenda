@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Fazenda - 3M Agropecuária</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .pagina-interna {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        
+        .info-section {
+            padding: 4rem 0;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .info-card {
+            background-color: var(--branco);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--sombra);
+            border-left: 4px solid var(--verde-principal);
+        }
+        
+        .info-card h3 {
+            color: var(--verde-escuro);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-card p {
+            color: var(--texto-medio);
+            line-height: 1.8;
+        }
+        
+        .info-card a {
+            color: var(--verde-principal);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .info-card a:hover {
+            color: var(--verde-escuro);
+            text-decoration: underline;
+        }
+        
+        .mapa-section {
+            padding: 4rem 0;
+            background-color: var(--cinza-claro);
+        }
+        
+        .mapa-container {
+            margin-top: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--sombra);
+            height: 450px;
+            background-color: var(--cinza-medio);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--texto-medio);
+            font-style: italic;
+        }
+        
+        .atividades-section {
+            padding: 4rem 0;
+        }
+        
+        .atividades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .atividade-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--cinza-claro);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .atividade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--sombra);
+        }
+        
+        .atividade-icone {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .atividade-card h3 {
+            color: var(--verde-escuro);
+            margin-bottom: 1rem;
+        }
+        
+        .atividade-card p {
+            color: var(--texto-medio);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">3M Agropecuária</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="fazenda.html" class="active">A Fazenda</a></li>
+                <li><a href="carreiras.html">Carreiras</a></li>
+                <li><a href="cadastro.html" class="btn-destaque">Trabalhe Conosco</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="pagina-interna">
+        
+        <!-- Seção de Contato -->
+        <section class="info-section">
+            <div class="container">
+                <h2 class="text-center">Entre em Contato</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📍 Localização</h3>
+                        <p>
+                            <strong>Fazenda 3M Agropecuária</strong><br>
+                            Rodovia Fulano de Tal, Km XX<br>
+                            Zona Rural - Cidade/SP<br>
+                            CEP: XXXXX-XXX
+                        </p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📞 Telefones</h3>
+                        <p>
+                            <strong>Telefone:</strong> (XX) XXXX-XXXX<br>
+                            <strong>WhatsApp:</strong> <a href="https://wa.me/55XXXXXXXXXXX" target="_blank">(XX) XXXXX-XXXX</a><br>
+                            <strong>Horário:</strong> Segunda a Sexta, 8h às 17h
+                        </p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📧 E-mails</h3>
+                        <p>
+                            <strong>Geral:</strong> <a href="mailto:contato@3magro.com.br">contato@3magro.com.br</a><br>
+                            <strong>RH/Carreiras:</strong> <a href="mailto:rh@3magro.com.br">rh@3magro.com.br</a><br>
+                            <strong>Comercial:</strong> <a href="mailto:comercial@3magro.com.br">comercial@3magro.com.br</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa -->
+        <section class="mapa-section">
+            <div class="container">
+                <h2 class="text-center">Como Chegar</h2>
+                <div class="mapa-container">
+                    <p>🗺️ Insira aqui o código embed do Google Maps<br>
+                    (Vá em Google Maps → Compartilhar → Incorporar mapa)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Atividades -->
+        <section class="atividades-section">
+            <div class="container">
+                <h2 class="text-center">Nossas Atividades</h2>
+                <div class="atividades-grid">
+                    <div class="atividade-card">
+                        <div class="atividade-icone">🐄</div>
+                        <h3>Pecuária de Corte</h3>
+                        <p>Criação e engorda de gado nelore com manejo especializado e alimentação balanceada.</p>
+                    </div>
+                    
+                    <div class="atividade-card">
+                        <div class="atividade-icone">🌾</div>
+                        <h3>Agricultura</h3>
+                        <p>Cultivo de soja, milho e forrageiras para suporte nutricional do rebanho.</p>
+                    </div>
+                    
+                    <div class="atividade-card">
+                        <div class="atividade-icone">🏭</div>
+                        <h3>Confinamento</h3>
+                        <p>Estrutura moderna para terminação intensiva com alto padrão de qualidade.</p>
+                    </div>
+                    
+                    <div class="atividade-card">
+                        <div class="atividade-icone">🌱</div>
+                        <h3>Manejo Sustentável</h3>
+                        <p>Práticas ambientalmente responsáveis, preservação de matas nativas e recursos hídricos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <h2>Quer Conhecer Nossa Estrutura?</h2>
+                <p>Entre em contato para agendar uma visita ou tirar dúvidas</p>
+                <a href="https://wa.me/55XXXXXXXXXXX" class="btn-primary" target="_blank">Falar no WhatsApp</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>3M Agropecuária</h4>
+                    <p>Tradição, qualidade e compromisso com o agronegócio brasileiro.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="fazenda.html">A Fazenda</a></li>
+                        <li><a href="carreiras.html">Carreiras</a></li>
+                        <li><a href="cadastro.html">Cadastrar Currículo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>📍 Endereço da Fazenda, Cidade - SP</p>
+                    <p>📞 (XX) XXXX-XXXX</p>
+                    <p>📧 contato@3magro.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 3M Agropecuária - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
